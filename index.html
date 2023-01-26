@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Menu</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .div-btn {
+            background-color: blueviolet;
+            display: flex;
+            justify-content: flex-end;
+            padding: 10px 20px;
+        }
+
+        .btn {
+            background: transparent;
+            border: none;
+            border-radius: 3%;
+            color: white;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .btn-open {
+            background-color: blueviolet;
+            color: #fff;
+            transition: all .3s ease;
+            height: 100vh;
+            width: 100vw;
+            opacity: 1;
+        }
+
+        .div {
+            overflow: hidden;
+            background-color: blueviolet;
+            color: #fff;
+            transition: all .3s ease;
+            padding: 0;
+            width: 0;
+            height: 0;
+            opacity: 0;
+        }
+
+        .btn:focus~.btn {
+            transform: rotate(45deg);
+        }
+
+        ul {
+            list-style: none;
+            outline: none;
+            text-align: center;
+        }
+
+        ul li {
+            padding: 60px;
+        }
+
+        ul li:hover {
+            background-color: #252e62;
+            color: #fff;
+
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="div-btn">
+            <button class="btn">&#9776;</button>
+        </div>
+        <nav class="nav">
+            <ul class="div">
+                <li>Inicio</li>
+                <li>Sobre</li>
+                <li>Contato</li>
+                <li>Serviços</li>
+            </ul>
+        </nav>
+    </header>
+
+    <script>
+        let btn = document.querySelector(".btn");
+        let div = document.querySelector(".div");
+        let i = 0;
+        btn.onclick = () => {
+            if (i == 0) {
+                i = 1;
+                btn.innerHTML = '<strong>X</strong>';
+                div.classList.add('btn-open');
+                div.classList.remove('div');
+            } else if (i == 1) {
+                i = 0;
+                btn.innerHTML = '<strong>&#9776;</strong>';
+                div.classList.remove('btn-open');
+                div.classList.add('div');
+            }
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- 
+
+    <header>
+        <div>Breno Nogg</div>
+        <button>&#9776;</button>
+        <nav>
+            <a href="">Home</a>
+            <a href="">About</a>
+            <a href="">Contacts</a>
+            <a href="">Services</a>
+        </nav>
+    </header>
+
+     -->
+</body>
+
+</html>
